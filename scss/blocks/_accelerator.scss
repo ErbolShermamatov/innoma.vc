@@ -1,0 +1,102 @@
+@use "../tools" as *;
+.accelerator {
+    &__inner {
+        @include flex(flex, start, stretch, column);
+        row-gap: rem(20);
+
+        @include mobile {
+            row-gap: rem(10);
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(rem(229), 1fr));
+        gap: rem(20);
+
+        @include mobile {
+            grid-template-columns: 1fr;
+            row-gap: rem(10);
+        }
+    }
+
+    &__item {
+        @include flex(flex, space-between, center, column);
+        @include fluid-text(20, 14);
+        padding-block: rem(60);
+        font-weight: 500;
+        gap: fluid(25, 17);
+        height: rem(284);
+        box-shadow: var(--shadow);
+        border-radius: var(--border-radius-large);
+
+        @include tablet {
+            &:last-child {
+                grid-column: -1 / 1;
+            }
+        }
+
+        @include mobile {
+            flex-direction: row;
+            justify-content: start;
+            padding-left: rem(30);
+        }
+
+        svg {
+            height: rem(90);
+            width: auto;
+
+            @include mobile {
+                width: rem(50);
+                height: auto;
+            }
+        }
+
+        @include mobile {
+            height: rem(143);
+        }
+    }
+    &__video-wrapper {
+        border-radius: var(--border-radius-large);
+        position: relative;
+        overflow: hidden;
+    }
+    &__video {
+        &-poster {
+            position: absolute;
+            opacity: 1;
+            inset: 0;
+            z-index: 2;
+            background: url("../../assets/images/video-poster.jpg") center/cover no-repeat;
+            transition-duration: var(--transition-duration);
+
+            &.play {
+                opacity: 0;
+            }
+        }
+        &-controls-wrapper {
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            @include flex(flex, center, center, column);
+            row-gap: fluid(25, 17);
+        }
+        &-play-button {
+            width: fluid(114, 63);
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: url("../../assets/icons/player-icon.svg") 55% 50% / 35% no-repeat var(--color-blue-alt-3);
+            cursor: pointer;
+        }
+        &-desc {
+            @include fluid-text(20, 16);
+            font-weight: 600;
+            color: var(--color-white);
+            text-align: center;
+
+            @include tablet {
+                max-width: rem(221);
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+@use 'reset';
+@use 'fonts';
+@use 'variables';
+@use 'core';
+
+@use 'blocks/button';
+@use 'blocks/section';
+
+@use 'blocks/burger-button';
+@use 'blocks/menu';
+@use 'blocks/header';
+
+@use 'blocks/green-bg';
+@use 'blocks/bg-overlay';
+@use 'blocks/hero';
+
+@use 'blocks/services';
+
+@use 'blocks/for-whom';
+
+@use 'blocks/chance';
+
+@use 'blocks/person-card';
+@use 'blocks/markets';
+@use 'blocks/tabs';
+
+@use 'blocks/accelerator';

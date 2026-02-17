@@ -1,0 +1,23 @@
+@use 'function' as *;
+
+@mixin min-max($max, $min) {
+    min-width: $min;
+    max-width: $max;
+}
+
+@mixin flex($flex-type:flex, $jc:center, $ai:center, $dir:row, $wrap:nowrap) {
+    display: $flex-type;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+}
+
+@mixin fluid-text($max, $min) {
+    font-size: fluid($max, $min);
+}
+
+@mixin square($value) {
+    width: rem($value);
+    aspect-ratio: 1;
+}

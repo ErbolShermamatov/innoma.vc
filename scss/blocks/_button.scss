@@ -1,0 +1,32 @@
+@use '../tools' as *;
+.button {
+    border-radius: var(--border-radius-large);
+    white-space: nowrap;
+
+    &--green {
+        background-color: var(--color-green);
+        font-weight: 600;
+        color: var(--color-white);
+        width: rem(326);
+        height: rem(70);
+        font-size: rem(18);
+
+        @include mobile {
+            width: rem(320);
+            height: rem(55);
+            font-size: rem(16);
+        }
+    }
+    &--blue {
+        @include fluid-text(20, 16);
+        font-weight: 600;
+        background: var(--gradient);
+        height: fluid(80, 55);
+        padding-inline: rem(34);
+        color: var(--color-white);
+
+        @include hover {
+            background: var(--gradient-2);
+        }
+    }
+}

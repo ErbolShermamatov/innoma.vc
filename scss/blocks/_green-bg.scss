@@ -1,0 +1,11 @@
+@use "../tools" as *;
+.green {
+    &--bg {
+        background-color: var(--color-green);
+        padding-inline: rem(5);
+        border-radius: var(--border-radius-small);
+    }
+    &--text {
+        color: var(--color-green);
+    }
+}

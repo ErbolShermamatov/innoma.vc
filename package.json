@@ -1,0 +1,22 @@
+{
+  "name": "innoma.vc",
+  "version": "1.0.0",
+  "description": "Landing page using HTML/SCSS/JS",
+  "keywords": [
+    "HTML",
+    "SCSS",
+    "JS",
+    "Landing",
+    "Page",
+    "Responsive",
+    "design"
+  ],
+  "license": "ISC",
+  "author": "Erbol Shermamatov",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass-watch": "sass --watch ./scss/main.scss ./styles/main.css"
+  }
+}

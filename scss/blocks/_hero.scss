@@ -1,0 +1,36 @@
+@use "../tools" as *;
+
+.hero {
+    height: 100vh;
+    background: url("../../assets/images/hero-bg.jpg") center/cover no-repeat;
+    position: relative;
+    z-index: 5;
+    color: var(--color-white);
+
+    &__inner {
+        @include flex(flex, center, start, column);
+        height: 100%;
+
+        @include tablet {
+            align-items: center;
+        }
+    }
+    &__content {
+        width: fluid(780, 346);
+        @include flex(flex, center, start, column);
+
+        @include tablet {
+            align-items: center;
+            text-align: center;
+        }
+    }
+    &__title {
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: rem(25);
+    }
+    &__desc {
+        @include fluid-text(34, 16);
+        margin-bottom: fluid(34, 32);
+    }
+}

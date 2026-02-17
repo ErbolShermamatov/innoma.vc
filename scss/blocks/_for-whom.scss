@@ -1,0 +1,69 @@
+@use "../tools" as *;
+
+.for-whom {
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: rem(20);
+        counter-reset: custom-counter;
+
+        @media (max-width: rem(1000)) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: rem(675)) {
+            gap: rem(10);
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+        @include flex(flex, center, center, row, wrap);
+
+        counter-increment: custom-counter;
+        --counter-value: counter(custom-counter);
+
+        &:nth-child(-n + 9) {
+            --counter-value: '0' counter(custom-counter);
+        }
+
+        width: 100%;
+        height: fluid(348, 270);
+        border-radius: var(--border-radius-large);
+        box-shadow: var(--shadow);
+    
+        &:last-child {
+            @media (max-width: rem(1000)) {
+                grid-column: -1 / 1;
+            }
+        }
+    }
+    &__wrapper {
+        width: 84%;
+        @include flex(flex, space-between, center, column);
+        row-gap: fluid(20, 10);
+    }
+
+    &__content {
+        @include flex(flex, start, center, column);
+        row-gap: fluid(15, 5);
+        text-align: center;
+        
+        @include tablet {
+            align-items: center;
+        }
+    }
+    &__desc {
+        @include fluid-text(16, 14);
+        font-weight: 300;
+    }
+    &__number {
+        &::before {
+            @include fluid-text(80, 64);
+            content: var(--counter-value);
+            font-weight: 800;
+            color: var(--color-blue);
+            opacity: .5;
+        }
+    }
+}

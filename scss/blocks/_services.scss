@@ -1,0 +1,67 @@
+@use "../tools" as *;
+
+.services {
+    &__list {
+        @include flex(flex, start, stretch, column);
+        row-gap: rem(180);
+
+        @include tablet {
+            row-gap: rem(50);
+        }
+    }
+
+    &__item {
+        @include flex(flex, space-between, start);
+        column-gap: fluid(40, 5);
+
+        &:nth-child(even) {
+            align-self: end;
+            justify-content: start;
+            flex-direction: row-reverse;
+            column-gap: fluid(110, 5);
+
+            @include tablet {
+                flex-direction: column;
+                row-gap: rem(20);
+                align-items: center;
+                align-self: center;
+            }
+
+            .services__item-image {
+                width: fluid(385, 277);
+            }
+        }
+
+        @include tablet {
+            flex-direction: column;
+            row-gap: rem(20);
+            align-items: center;
+        }
+
+        &-content {
+            @include flex(flex, start, start, column);
+            row-gap: fluid(24, 15);
+
+            @include tablet {
+                order: 1;
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+        &-title {
+            color: var(--color-blue);
+        }
+
+        &-desc {
+            @include fluid-text(20, 14);
+            font-weight: 300;
+
+            width: fluid(674, 310);
+        }
+
+        &-image {
+            width: fluid(495, 274);
+        }
+    }
+}

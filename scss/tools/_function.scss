@@ -1,0 +1,20 @@
+@use "sass:math";
+
+@function rem($value) {
+    @return math.div($value, 16) + rem;
+}
+
+@function fluid($max, $min) {
+    $minWidth: 360;
+    $maxWidth: 1920;
+    
+    $slope: ($max - $min) / ($maxWidth - $minWidth);
+    $base: $min - ($slope * $minWidth);
+
+    $minRem: #{rem($min)};
+    $maxRem: #{rem($max)};
+    $baseRem: #{rem($base)};
+
+    @return clamp(#{$minRem}, calc(#{$baseRem} + #{$slope * 100}vw), #{$maxRem});
+}
+

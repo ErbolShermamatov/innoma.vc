@@ -1,0 +1,58 @@
+@use "../tools" as *;
+.burger-button {
+    @include tablet {
+        width: fluid(46, 40);
+        aspect-ratio: 1;
+        background-color: var(--color-white);
+        border-radius: var(--border-radius-medium);
+        position: relative;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: 50%;
+            height: rem(2);
+            border-radius: var(--border-radius-small);
+            background-color: var(--color-green);
+            translate: -50% -50%;
+        }
+
+        &::before {
+            top: 45%;
+        }
+        &::after {
+            top: 60%;
+        }
+
+        &.is-active {
+            &::before {
+                animation: menu-button 0.3s ease-in forwards;
+            }
+            &::after {
+                animation: menu-button2 0.3s ease-in forwards;
+            }
+        }
+
+        @keyframes menu-button {
+            from {
+                top: 40%;
+                rotate: 0deg;
+            }
+            to {
+                top: 50%;
+                rotate: 45deg;
+            }
+        }
+        @keyframes menu-button2 {
+            from {
+                top: 40%;
+                rotate: 0deg;
+            }
+            to {
+                top: 50%;
+                rotate: -45deg;
+            }
+        }
+    }
+}

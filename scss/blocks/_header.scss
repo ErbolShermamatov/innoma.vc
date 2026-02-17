@@ -1,0 +1,60 @@
+@use "../tools" as *;
+.header {
+    padding-top: rem(32);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+
+    @include tablet {
+        padding-top: rem(18);
+    }
+
+    &__logo {
+        width: fluid(151, 100);
+    }
+
+    &__inner {
+        @include flex(flex, space-between, center);
+        column-gap: rem(10);
+
+        @include tablet {
+            justify-content: start;
+        }
+    }
+
+    &__nav {
+
+        @include tablet {
+            display: none;
+        }
+
+        &-list {
+            @include flex(flex, start, center);
+            column-gap: rem(50);
+        }
+        &-item {
+            @include fluid-text(18, 16);
+            color: var(--color-white);
+
+            @include hover {
+                opacity: .8;
+            }
+        }
+        &-link {
+            font-weight: 500;
+        }
+    }
+
+    &__button {
+        @include fluid-text(18, 14);
+        width: fluid(149, 88);
+        height: fluid(56, 40);
+        font-weight: 500;
+
+        @include tablet {
+            margin-left: auto;
+        }
+    }
+}

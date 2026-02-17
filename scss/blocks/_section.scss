@@ -1,0 +1,45 @@
+@use '../tools' as *;
+
+.section {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(60, 40);
+
+    &__header {
+        &-title {
+            font-weight: 700;
+            color: var(--color-blue);
+
+            @include tablet {
+                text-align: center;
+            }
+        }
+        &-desc {
+            @include fluid-text(20, 14);
+            font-weight: 300;
+
+            @include tablet {
+                text-align: center;
+            }
+        }
+        
+    }
+
+    &--services {
+        padding-block: fluid(120, 100);
+    }
+
+    &--for-whom {
+        padding-bottom: rem(100);
+    }
+
+    &--markets {
+        padding-block: rem(100);
+        @include mobile {
+            row-gap: rem(20);
+        }
+    }
+    &--accelerator {
+        padding-bottom: rem(100);
+    }
+}

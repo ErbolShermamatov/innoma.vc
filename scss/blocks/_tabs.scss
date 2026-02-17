@@ -1,0 +1,156 @@
+@use "../tools" as *;
+.tabs {
+    &__buttons-list {
+        @include flex(flex, start, start);
+        border-radius: var(--border-radius-medium);
+        overflow: hidden;
+    }
+    &__button-item {
+        @include fluid-text(20, 14);
+
+        flex-grow: 0.25;
+        height: fluid(70, 56);
+        background-color: var(--color-light);
+        color: var(--color-gray);
+
+        &:not(:last-child) {
+            border-right: rem(1) solid var(--color-light-alt);
+        }
+        @include tablet {
+            width: fluid(182, 80);
+            text-align: center;
+        }
+    }
+    &__button {
+        @include flex(flex, center, center);
+        @include fluid-text(20, 10);
+        width: 100%;
+        height: 100%;
+
+        &.is-active {
+            pointer-events: none;
+            background-color: var(--color-blue-alt);
+            font-weight: 700;
+            color: var(--color-white);
+        }
+    }
+
+    &__content {
+        background: url("../../assets/images/markets-bg.svg") left -2px/60% no-repeat;
+        
+        @include tablet {
+            background-size: 100% 100%;
+            background-position: 0 -120px;
+        }
+
+        &-list {
+            @include flex(flex, start, stretch, column);
+            row-gap: rem(100);
+        }
+        &-item {
+            display: none;
+            column-gap: rem(20);
+            &.is-active {
+                @include flex(flex, space-between, start);
+                @include tablet {
+                    flex-direction: column;
+                    align-items: stretch;
+                    row-gap: rem(15);
+                }
+            }
+        }
+        &-info {
+            @include flex(flex, start, start, column);
+            row-gap: fluid(29, 15);
+
+            @include mobile {
+                display: contents;
+            }
+        }
+        &-title {
+            @include fluid-text(32, 18);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        &-desc {
+            @include fluid-text(16, 14);
+            max-width: 16.75em;
+        }
+        &-button {
+            @include fluid-text(18, 16);
+        
+            @include mobile {
+                order: 1;
+            }
+        }
+
+        &-stats {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(rem(150), rem(289)));
+            gap: fluid(20, 10);
+
+            @include tablet {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            &-info {
+                background-color: var(--color-white);
+                @include flex(flex, center, center, column);
+                height: fluid(200, 134);
+                border-radius: var(--border-radius-large);
+                box-shadow: var(--shadow);
+
+                &:first-child,
+                &:nth-child(2) {
+                    .tabs__content-stats-title {
+                        @include flex(flex, start, center);
+                        column-gap: rem(5);
+                        &::before {
+                            content: ">";
+                            font-size: inherit;
+                            color: currentColor;
+                        }
+                    }
+                }
+                &:first-child {
+                    .tabs__content-stats-title {
+                        &::after {
+                            content: "Млрд";
+                            font-size: fluid(24, 16);
+                            color: currentColor;
+                        }
+                    }
+                }
+
+                &--download {
+                    @include fluid-text(20, 14);
+                    @include flex(flex, center, center, column);
+                    row-gap: fluid(15, 10);
+                    background-color: var(--color-blue);
+                    color: var(--color-white);
+                    font-weight: 500;
+                }
+
+                svg {
+                    width: fluid(47, 25);
+                    height: fluid(40, 21);
+                }
+            }
+            &-title {
+                @include fluid-text(48, 24);
+                font-weight: 800;
+                color: var(--color-blue);
+                opacity: 0.5;
+            }
+            &-desc {
+                @include fluid-text(16, 14);
+                color: var(--color-dark-alt-3);
+                opacity: 0.5;
+
+                @include tablet {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

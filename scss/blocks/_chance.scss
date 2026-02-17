@@ -1,0 +1,29 @@
+@use '../tools' as *;
+
+.chance {
+    background: url('../../assets/images/chance-bg.jpg') center/cover no-repeat;
+    padding-block: fluid(150, 95);
+    position: relative;
+    z-index: 1;
+    
+    &__inner {
+        @include flex(flex, start, center, column);
+        row-gap: rem(20);
+        margin-inline: auto;
+        width: fluid(1350, 324);
+        text-align: center;
+    }
+    
+    &__title {
+        @include fluid-text(40, 24);
+        color: var(--color-white);
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    &__desc {
+        @include fluid-text(20, 14);
+        font-weight: 500;
+        color: var(--color-white);
+    }
+}

@@ -1,0 +1,14 @@
+@use '../tools' as *;
+.person-card {
+    @include flex(flex, start, center);
+    column-gap: rem(10);
+
+    &__name {
+        @include fluid-text(16, 14);
+        font-weight: 500;
+    }
+    &__status {
+        @include fluid-text(14, 12);
+        color: var(--color-gray-alt2);
+    }
+}
