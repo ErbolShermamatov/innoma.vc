@@ -11,7 +11,8 @@ button,
 a,
 input,
 summary,
-li {
+li,
+svg {
     transition-duration: var(--transition-duration);
 }
 
@@ -89,6 +90,11 @@ h5,
 
 .tablet-visible {
     @include tablet-above {
+        display: none;
+    }
+}
+.tablet-hidden {
+    @include tablet {
         display: none;
     }
 }

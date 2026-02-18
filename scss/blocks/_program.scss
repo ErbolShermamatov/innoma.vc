@@ -1,0 +1,112 @@
+@use "../tools" as *;
+
+.program {
+    @include flex(flex, start, start, column);
+    row-gap: rem(20);
+
+    &__list {
+        @include flex(flex, start, stretch, column);
+        align-self: stretch;
+        row-gap: rem(20);
+        counter-reset: program-number;
+
+        @include mobile {
+            row-gap: rem(15);
+        }
+    }
+    &__item {
+        counter-increment: program-number;
+        box-shadow: var(--shadow);
+        border-radius: var(--border-radius-large);
+
+        &:last-child {
+            @include fluid-text(20, 14);
+            padding-inline: rem(40);
+            padding-block: rem(30);
+            font-weight: 700;
+
+            @include tablet {
+                padding-inline: rem(30);
+            }
+            @include mobile {
+                padding-block: rem(36);
+                text-align: center;
+            }
+        }
+    }
+    &__accordion {
+        &:not([open]) {
+            .program__accordion-button {
+                svg {
+                    rotate: 180deg;
+                }
+            }
+        }
+
+        &-title {
+            @include fluid-text(20, 14);
+            @include flex(flex, start, center);
+            column-gap: rem(15);
+
+            list-style: none;
+
+            padding-inline: rem(40);
+            padding-block: rem(30);
+            cursor: pointer;
+            font-weight: 500;
+
+            @include tablet {
+                padding-inline: rem(30);
+            }
+
+            @include mobile {
+                flex-direction: column;
+                row-gap: rem(7);
+                text-align: center;
+                padding-block: rem(20);
+                position: relative;
+            }
+        }
+
+        &-title-number {
+            &::before {
+                content: "Модуль " counter(program-number);
+                white-space: nowrap;
+                font-weight: 700;
+            }
+        }
+
+        &-content-desc {
+            @include fluid-text(16, 14);
+            color: var(--color-gray-alt);
+            padding-block: fluid(25, 20);
+            padding-inline: rem(40);
+            border-block: rem(1) solid var(--color-light-alt2);
+
+            @include tablet {
+                padding-inline: rem(30);
+            }
+        }
+        &-button {
+            @include flex(flex, center, center);
+            flex-shrink: 0;
+            color: var(--color-white);
+            margin-left: auto;
+            width: fluid(39, 24);
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background-color: var(--color-blue-alt-2);
+            
+            @include mobile {
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                translate: -50% 50%;
+            }
+            svg {
+                width: fluid(15, 9);
+                height: auto;
+            }
+        }
+    }
+}

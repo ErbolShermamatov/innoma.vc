@@ -17,7 +17,7 @@
         &-desc {
             @include fluid-text(20, 14);
             font-weight: 300;
-
+            margin-top: rem(10);
             @include tablet {
                 text-align: center;
             }
@@ -39,7 +39,12 @@
             row-gap: rem(20);
         }
     }
+
     &--accelerator {
+        padding-bottom: rem(100);
+    }
+
+    &--program {
         padding-bottom: rem(100);
     }
 }

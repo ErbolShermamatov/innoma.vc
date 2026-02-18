@@ -24,9 +24,5 @@
         height: fluid(80, 55);
         padding-inline: rem(34);
         color: var(--color-white);
-
-        @include hover {
-            background: var(--gradient-2);
-        }
     }
 }
