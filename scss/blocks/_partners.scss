@@ -1,0 +1,92 @@
+@use "../tools" as *;
+.partners {
+    overflow-x: hidden;
+    background: url("../../assets/images/partners/partners-background.jpg") center/cover no-repeat;
+    padding-block: rem(60);
+
+    @include tablet {
+        padding-block: rem(110);
+    }
+    @include mobile {
+        padding-block: rem(100);
+    }
+
+    &__inner {
+        @include flex(flex, space-between, center);
+        column-gap: rem(20);
+
+        @include tablet {
+            flex-direction: column;
+            row-gap: rem(54);
+        }
+        @include mobile {
+            row-gap: rem(32);
+        }
+    }
+    &__content {
+        max-width: fluid(556, 324);
+        @include flex(flex, start, stretch, column);
+        row-gap: rem(18);
+
+        @include tablet {
+            align-items: center;
+            row-gap: rem(30);
+            text-align: center;
+        }
+
+        &-title {
+            @include fluid-text(40, 24);
+            font-weight: 700;
+            color: var(--color-white);
+        }
+
+        &-desc {
+            @include fluid-text(18, 14);
+            color: var(--color-white);
+        }
+    }
+
+    &__logos {
+        position: relative;
+        z-index: 1;
+        &::after {
+            content: "";
+            top: 12%;
+            left: 40%;
+            background: url("../../assets/icons/partners-bg.svg") center/contain no-repeat;
+            position: absolute;
+            width: 85%;
+            height: 60%;
+            z-index: -1;
+        }
+        @include tablet {
+            align-self: start;
+            &-image {
+                width: 75%;
+                height: 80%;
+            }
+        }
+
+        &-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(rem(121), rem(205)));
+            gap: rem(20);
+
+            @include mobile {
+                gap: rem(10);
+                grid-template-columns: repeat(2, rem(121));
+            }
+        }
+        &-item {
+            background-color: var(--color-white);
+            @include flex(flex, center, center);
+            border-radius: var(--border-radius-large);
+            box-shadow: var(--shadow);
+            height: rem(112);
+
+            @include mobile {
+                height: rem(66);
+            }
+        }
+    }
+}

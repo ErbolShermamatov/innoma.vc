@@ -1254,4 +1254,114 @@ h5,
   color: var(--color-blue-alt-2);
 }
 
+.partners {
+  overflow-x: hidden;
+  background: url("../../assets/images/partners/partners-background.jpg") center/cover no-repeat;
+  padding-block: 3.75rem;
+}
+@media (max-width: 48rem) {
+  .partners {
+    padding-block: 6.875rem;
+  }
+}
+@media (max-width: 30rem) {
+  .partners {
+    padding-block: 6.25rem;
+  }
+}
+.partners__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  column-gap: 1.25rem;
+}
+@media (max-width: 48rem) {
+  .partners__inner {
+    flex-direction: column;
+    row-gap: 3.375rem;
+  }
+}
+@media (max-width: 30rem) {
+  .partners__inner {
+    row-gap: 2rem;
+  }
+}
+.partners__content {
+  max-width: clamp(20.25rem, 16.9038461538rem + 14.8717948718vw, 34.75rem);
+  display: flex;
+  justify-content: start;
+  align-items: stretch;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  row-gap: 1.125rem;
+}
+@media (max-width: 48rem) {
+  .partners__content {
+    align-items: center;
+    row-gap: 1.875rem;
+    text-align: center;
+  }
+}
+.partners__content-title {
+  font-size: clamp(1.5rem, 1.2692307692rem + 1.0256410256vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-white);
+}
+.partners__content-desc {
+  font-size: clamp(0.875rem, 0.8173076923rem + 0.2564102564vw, 1.125rem);
+  color: var(--color-white);
+}
+.partners__logos {
+  position: relative;
+  z-index: 1;
+}
+.partners__logos::after {
+  content: "";
+  top: 12%;
+  left: 40%;
+  background: url("../../assets/icons/partners-bg.svg") center/contain no-repeat;
+  position: absolute;
+  width: 85%;
+  height: 60%;
+  z-index: -1;
+}
+@media (max-width: 48rem) {
+  .partners__logos {
+    align-self: start;
+  }
+  .partners__logos-image {
+    width: 75%;
+    height: 80%;
+  }
+}
+.partners__logos-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(7.5625rem, 12.8125rem));
+  gap: 1.25rem;
+}
+@media (max-width: 30rem) {
+  .partners__logos-list {
+    gap: 0.625rem;
+    grid-template-columns: repeat(2, 7.5625rem);
+  }
+}
+.partners__logos-item {
+  background-color: var(--color-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow);
+  height: 7rem;
+}
+@media (max-width: 30rem) {
+  .partners__logos-item {
+    height: 4.125rem;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
