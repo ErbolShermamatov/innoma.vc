@@ -1,0 +1,60 @@
+@use "../tools" as *;
+.result {
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        gap: rem(20);
+        counter-reset: result-counter;
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+            gap: rem(10);
+        }
+
+        @include mobile {
+            grid-template-columns: 1fr;
+        }
+    }
+    &__item {
+        @include flex(flex, center, start, row);
+        padding-top: rem(20);
+
+        counter-increment: result-counter;
+        --counter-value: counter(result-counter);
+
+        &:nth-child(-n + 9) {
+            --counter-value: "0" counter(result-counter);
+        }
+
+        box-shadow: var(--shadow);
+        border-radius: var(--border-radius-large);
+        height: rem(280);
+        text-align: center;
+
+        @include mobile {
+            height: rem(204);
+        }
+
+        &-content {
+            width: 90%;
+        }
+        &-title {
+            font-weight: 600;
+            margin-bottom: fluid(15, 5);
+        }
+        &-desc {
+            @include fluid-text(16, 14);
+            font-weight: 300;
+        }
+        &-number {
+            &::before {
+                @include fluid-text(80, 48);
+                content: var(--counter-value);
+                font-weight: 800;
+                color: var(--color-blue);
+                opacity: 0.5;
+            }
+        }
+    }
+}
