@@ -1,0 +1,84 @@
+@use "../tools" as *;
+.price {
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(rem(354), 1fr));
+        gap: rem(20);
+
+        @include mobile {
+            grid-template-columns: 1fr;
+            row-gap: rem(10);
+        }
+    }
+    &__item {
+        box-shadow: var(--shadow);
+        border-radius: var(--border-radius-large);
+        min-height: fluid(798, 600);
+        padding-bottom: rem(20);
+
+        &-header {
+            @include flex(flex, center, center, column);
+            gap: rem(15);
+            height: fluid(206, 120);
+            text-align: center;
+
+            @include mobile {
+                column-gap: rem(10);
+                flex-direction: row;
+                padding-inline: rem(20);
+            }
+
+            svg {
+                height: rem(60);
+                width: auto;
+            }
+        }
+        &-title {
+            @include fluid-text(20, 16);
+            font-weight: 600;
+            max-width: 80%;
+        }
+
+        &-content {
+            border-top: rem(1) solid var(--color-light-alt3);
+            padding: rem(25) fluid(40, 30);
+
+            @include flex(flex, space-between, center);
+
+            &:first-child {
+                flex-direction: column;
+                justify-content: start;
+                align-items: stretch;
+                min-height: fluid(280, 216);
+                padding-inline: calc(fluid(40, 30) + rem(19));
+                padding-block: rem(15);
+                row-gap: fluid(25, 13);
+            }
+            &-title {
+                font-weight: 500;
+            }
+
+            &-list {
+                @include flex(flex, start, stretch, column);
+                @include fluid-text(16, 14);
+                row-gap: fluid(10, 5);
+            }
+            &-desc {
+                @include fluid-text(16, 14);
+
+                &.blue-text {
+                    @include fluid-text(18, 14);
+                    font-weight: 700;
+                }
+            }
+        }
+
+        &-button-wrapper {
+            margin-top: rem(20);
+            text-align: center;
+        }
+        &-button {
+            width: 80%;
+        }
+    }
+}
