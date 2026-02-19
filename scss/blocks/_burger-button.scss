@@ -33,26 +33,7 @@
                 animation: menu-button2 0.3s ease-in forwards;
             }
         }
-
-        @keyframes menu-button {
-            from {
-                top: 40%;
-                rotate: 0deg;
-            }
-            to {
-                top: 50%;
-                rotate: 45deg;
-            }
-        }
-        @keyframes menu-button2 {
-            from {
-                top: 40%;
-                rotate: 0deg;
-            }
-            to {
-                top: 50%;
-                rotate: -45deg;
-            }
-        }
+        
+        @include animation;
     }
 }

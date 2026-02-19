@@ -1,11 +1,11 @@
-@use 'function' as *;
+@use "function" as *;
 
 @mixin min-max($max, $min) {
     min-width: $min;
     max-width: $max;
 }
 
-@mixin flex($flex-type:flex, $jc:center, $ai:center, $dir:row, $wrap:nowrap) {
+@mixin flex($flex-type: flex, $jc: center, $ai: center, $dir: row, $wrap: nowrap) {
     display: $flex-type;
     justify-content: $jc;
     align-items: $ai;
@@ -20,4 +20,27 @@
 @mixin square($value) {
     width: rem($value);
     aspect-ratio: 1;
+}
+
+@mixin animation {
+    @keyframes menu-button {
+        from {
+            top: 40%;
+            rotate: 0deg;
+        }
+        to {
+            top: 50%;
+            rotate: 45deg;
+        }
+    }
+    @keyframes menu-button2 {
+        from {
+            top: 40%;
+            rotate: 0deg;
+        }
+        to {
+            top: 50%;
+            rotate: -45deg;
+        }
+    }
 }

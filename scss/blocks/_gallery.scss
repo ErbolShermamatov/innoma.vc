@@ -1,0 +1,69 @@
+@use "../tools" as *;
+
+.gallery {
+    &[open] {
+        @include flex(flex, center, start, row-reverse);
+        width: fit-content;
+        height: fit-content;
+        border: none;
+        column-gap: rem(20);
+        padding: fluid(40, 15);
+        border-radius: var(--border-radius-large);
+        
+
+        @include tablet {
+            flex-direction: column;
+        }
+    }
+
+    &::backdrop {
+        background-color: var(--color-black);
+        opacity: 0.5;
+    }
+    &__form {
+        height: auto;
+        @include tablet {
+            align-self: end;
+        }
+    }
+    &-close-btn {
+        position: relative;
+        width: fluid(46, 30);
+        aspect-ratio: 1;
+        background-color: var(--color-green);
+        border-radius: var(--border-radius-medium);
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: 50%;
+            height: rem(2);
+            border-radius: var(--border-radius-small);
+            background-color: var(--color-white);
+            translate: -50% -50%;
+        }
+
+        &::before {
+            top: 45%;
+        }
+        &::after {
+            top: 60%;
+        }
+        &.is-active {
+            &::before {
+                animation: menu-button 0.3s ease-in forwards;
+            }
+            &::after {
+                animation: menu-button2 0.3s ease-in forwards;
+            }
+        }
+
+        @include animation;
+    }
+
+    &__image {
+        border-radius: var(--border-radius-large);
+        width: fluid(884, 320);
+    }
+}

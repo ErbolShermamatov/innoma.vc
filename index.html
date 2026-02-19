@@ -1062,6 +1062,79 @@
                 </div>
             </div>
         </section>
+
+        <section class="section section--about container">
+            <header class="section__header">
+                <h2 class="section__header-title">Кто мы?</h2>
+            </header>
+            <div class="section__body">
+                <div class="about">
+                    <div class="about__inner">
+                        <div class="about__info">
+                            <img src="./assets/images/about/about_info-image.png" width="585" height="459" alt="" class="about__info-image">
+                            <div class="about__info-desc">
+                                <p>
+                                    <span class="blue-text">INNOMA.VC</span> - Международное аналитическое агентство по
+                                    запуску IT бизнеса на локальных рынках регионов Азии, Ближнего Востока, Латинской Америки, Африки.
+                                </p>
+                                <p>
+                                    Наша команда состоит из профессионалов своего дела и основной нашей целью является
+                                    помощь IT компаниям получить необходимые знания и пакеты документов, чтобы успешно
+                                    запустить свой продукт на международных рынках.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="about__intro">
+                            <div class="about__intro-image-wrapper">
+                                <img src="./assets/images/about/about_intro-image.png" width="375" height="402" alt="" class="about__intro-image">
+                            </div>
+                            <blockquote class="about__intro-desc">
+                                <p class="about__intro-text">
+                                    Всем привет! <br> Меня зовут Роман. Последние 6 лет я являюсь частью
+                                    инновационной экосистемы СНГ, прошел путь от проектного
+                                    менеджера до руководителя продукта по автоматизированному скаутингу и скорингу
+                                    стартапов. За 6 лет работы я увидел множество ошибок и отсутствие ориентации
+                                    акселерационных программ под запросы стартапов. Все акселераторы выполнялись ради
+                                    акселераторв и выполнения КПЭ.
+                                </p>
+                                <div class="about__intro-person-info">
+                                    <cite class="about__intro-name">Роман Гайн</cite>
+                                    <cite class="about__intro-status">Основатель INNOMA.VC</cite>
+                                </div>
+                            </blockquote>
+                        </div>
+                        <div class="about__images">
+                            <ul class="about__images-list">
+                                <li class="about__images-item">
+                                    <img src="./assets/images/about/1.jpg" alt="Фотография Романа Гайна" width="236" height="157" class="about__image">
+                                    <button class="about__images-button" 
+                                    title="Открыть картинку" 
+                                    aria-label="Открыть картинку"
+                                    onclick="document.getElementById('gallery').showModal();"
+                                    ><span class="visually-hidden">Открыть картинку</span></button>
+                                </li>
+                                <li class="about__images-item">
+                                    <img src="./assets/images/about/2.jpg" alt="Фотография Романа Гайна" width="236" height="157" class="about__image">
+                                    <button class="about__images-button" title="Открыть картинку" aria-label="Открыть картинку"><span class="visually-hidden">Открыть картинку</span></button>
+                                </li>
+                                <li class="about__images-item">
+                                    <img src="./assets/images/about/3.jpg" alt="Фотография Романа Гайна" width="236" height="157" class="about__image">
+                                    <button class="about__images-button" title="Открыть картинку" aria-label="Открыть картинку"><span class="visually-hidden">Открыть картинку</span></button>
+                                </li>
+                                <li class="about__images-item">
+                                    <img src="./assets/images/about/4.jpg" alt="Фотография Романа Гайна" width="236" height="157" class="about__image">
+                                    <button class="about__images-button" title="Открыть картинку" aria-label="Открыть картинку"><span class="visually-hidden">Открыть картинку</span></button>
+                                </li>
+                                <li class="about__images-item">
+                                    <img src="./assets/images/about/5.jpg" alt="Фотография Романа Гайна" width="236" height="157" class="about__image">
+                                    <button class="about__images-button" title="Открыть картинку" aria-label="Открыть картинку"><span class="visually-hidden">Открыть картинку</span></button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <dialog id="menu" class="menu">
@@ -1086,6 +1159,15 @@
             </ul>
         </nav>
     </dialog>
+
+    <dialog id="gallery" class="gallery">
+        <form class="gallery__form" method="dialog">
+            <button class="is-active gallery-close-btn" aria-label="Закрыть картинку" title="Закрыть картинку"
+                type="submit"><span class="visually-hidden">Закрыть картинку</span></button>
+        </form>
+        <img src="./assets/images/about/1.jpg" alt="Фотография Романа Гайна" class="gallery__image">
+    </dialog>
+
     <script src="scripts/main.js"></script>
 </body>
 
