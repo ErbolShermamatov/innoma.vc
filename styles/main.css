@@ -236,6 +236,7 @@ svg * {
 
 html:has(dialog[open]) {
   overflow: hidden;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -424,6 +425,9 @@ h5,
   padding-bottom: 6.25rem;
 }
 .section--about {
+  padding-bottom: 6.25rem;
+}
+.section--experts {
   padding-bottom: 6.25rem;
 }
 
@@ -1264,8 +1268,11 @@ h5,
   height: auto;
 }
 
-.blue-text {
+.blue--text {
   color: var(--color-blue-alt-2);
+}
+.blue--bg {
+  background-color: var(--color-blue-alt-2);
 }
 
 .partners {
@@ -1751,6 +1758,70 @@ h5,
 .gallery__image {
   border-radius: var(--border-radius-large);
   width: clamp(20rem, 11.8653846154rem + 36.1538461538vw, 55.25rem);
+}
+
+.experts__slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  column-gap: clamp(1.25rem, 0.9615384615rem + 1.2820512821vw, 2.5rem);
+}
+.experts__slider-list {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
+  height: clamp(16.25rem, 15.2403846154rem + 4.4871794872vw, 20.625rem);
+  column-gap: 1.875rem;
+}
+.experts__slider-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: clamp(12.8125rem, 12.4519230769rem + 1.6025641026vw, 14.375rem);
+  height: 100%;
+}
+.experts__slider-image {
+  width: clamp(9.0625rem, 8.4711538462rem + 2.6282051282vw, 11.625rem);
+}
+.experts__slider-content {
+  display: flex;
+  justify-content: start;
+  align-items: stretch;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  row-gap: clamp(0.3125rem, 0.2403846154rem + 0.3205128205vw, 0.625rem);
+  text-align: center;
+}
+.experts__slider-name {
+  font-size: clamp(1rem, 0.9711538462rem + 0.1282051282vw, 1.125rem);
+  font-weight: 600;
+}
+.experts__slider-desc {
+  font-size: clamp(0.875rem, 0.8461538462rem + 0.1282051282vw, 1rem);
+  font-weight: 300;
+}
+.experts__button {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 2.4375rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  color: var(--color-white);
+}
+.experts__button:first-child svg {
+  rotate: 180deg;
 }
 
 /*# sourceMappingURL=main.css.map */

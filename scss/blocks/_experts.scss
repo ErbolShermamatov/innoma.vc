@@ -1,0 +1,52 @@
+@use '../tools' as *;
+
+.experts {
+    &__slider {
+        @include flex(flex, space-between, center);
+        column-gap: fluid(40, 20);
+        
+        &-list {
+            flex-grow: 1;
+            @include flex(flex, center, stretch, row, wrap);
+            overflow: hidden;
+            height: fluid(330, 260);
+            column-gap: rem(30);
+        }
+        &-item {
+            @include flex(flex, center, center, column);
+            width: fluid(230, 205);
+            height: 100%;
+        }
+
+        &-image {
+            width: fluid(186, 145);
+        }
+        &-content {
+            @include flex(flex, start, stretch, column);
+            row-gap: fluid(10, 5);
+            text-align: center;
+        }
+        &-name {
+            @include fluid-text(18, 16);
+            font-weight: 600;
+        }
+        &-desc {
+            @include fluid-text(16, 14);
+            font-weight: 300;
+        }
+    }
+    &__button {
+        flex-shrink: 0;
+        @include flex(flex, center, center);
+        width: rem(39);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        color: var(--color-white);
+
+        &:first-child {
+            svg {
+                rotate: 180deg;
+            }
+        }
+    }
+}

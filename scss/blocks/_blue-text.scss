@@ -1,3 +1,8 @@
-.blue-text {
-    color: var(--color-blue-alt-2);
+.blue {
+    &--text {
+        color: var(--color-blue-alt-2);
+    }
+    &--bg {
+        background-color: var(--color-blue-alt-2);
+    }
 }
