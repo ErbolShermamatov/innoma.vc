@@ -430,6 +430,9 @@ h5,
 .section--experts {
   padding-bottom: 6.25rem;
 }
+.section--sponsors {
+  padding-bottom: 6.25rem;
+}
 
 @media (max-width: 48rem) {
   .burger-button {
@@ -1822,6 +1825,32 @@ h5,
 }
 .experts__button:first-child svg {
   rotate: 180deg;
+}
+
+.sponsors__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14.75rem, 18rem));
+  justify-content: center;
+  gap: clamp(0.75rem, 0.6346153846rem + 0.5128205128vw, 1.25rem);
+}
+@media (max-width: 48rem) {
+  .sponsors__list {
+    grid-template-columns: repeat(2, minmax(9.625rem, 14.75rem));
+  }
+}
+.sponsors__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius-large);
+  height: clamp(3.3125rem, 2.6346153846rem + 3.0128205128vw, 6.25rem);
+}
+.sponsors__image {
+  width: 52%;
+  max-height: 85%;
 }
 
 /*# sourceMappingURL=main.css.map */

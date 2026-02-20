@@ -1,0 +1,24 @@
+@use "../tools" as *;
+.sponsors {
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(rem(236), rem(288)));
+        
+        justify-content: center;
+        gap: fluid(20, 12);
+
+        @include tablet {
+            grid-template-columns: repeat(2, minmax(rem(154), rem(236)));
+        }
+    }
+    &__item {
+        @include flex(flex, center, center);
+        box-shadow: var(--shadow);
+        border-radius: var(--border-radius-large);
+        height: fluid(100, 53);
+    }
+    &__image {
+        width: 52%;
+        max-height: 85%;
+    }
+}
