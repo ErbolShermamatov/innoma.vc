@@ -1,0 +1,50 @@
+@use '../tools' as *;
+.socials {
+    @include flex(flex, start, stretch, column);
+    row-gap: fluid(30, 20);
+    color: var(--color-white);
+    &__text {
+        @include fluid-text(20, 16);
+        font-weight: 600;
+    }
+
+    &__list {
+        @include flex(flex, start, stretch);
+        column-gap: fluid(55, 40);
+
+        @include tablet {
+            justify-content: center;
+        }
+    }
+
+    &__link {
+        @include fluid-text(20, 16);
+        @include flex(flex, start, center);
+        column-gap: rem(15);
+
+        @include hover {
+            opacity: .8;
+        }
+
+        @include tablet {
+            flex-direction: column;
+            row-gap: rem(20)
+        }
+    }
+    &__logo {
+        @include flex(flex, center, center);
+        width: rem(53);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: var(--color-white);
+        box-shadow: var(--shadow-2);
+
+        @include mobile {
+            width: rem(45);
+        }
+        svg {
+            width: 66%;
+            height: auto;
+        }
+    }
+}

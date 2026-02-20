@@ -210,6 +210,7 @@ svg * {
   --color-light-alt: #CFDDEB;
   --color-light-alt2: #E9E9E9;
   --color-light-alt3: #E3E3E3;
+  --color-light-alt4: #E4E4E4;
   --color-dark: #232323;
   --color-dark-alt: #0F0F0F;
   --color-dark-alt-2: #1B1B1B;
@@ -269,12 +270,12 @@ button {
 }
 @media (hover: hover) {
   button:hover {
-    opacity: 0.9;
+    opacity: 0.8;
   }
 }
 @media (hover: none) {
   button:active {
-    opacity: 0.9;
+    opacity: 0.8;
   }
 }
 
@@ -1947,6 +1948,165 @@ h5,
 .events__item-date {
   font-size: clamp(0.75rem, 0.7211538462rem + 0.1282051282vw, 0.875rem);
   font-weight: 300;
+}
+
+.contact {
+  background: url("../../assets/images/partners/partners-background.jpg") center/cover no-repeat;
+  padding-block: clamp(3.75rem, 3.5336538462rem + 0.9615384615vw, 4.6875rem);
+}
+.contact__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 1.25rem;
+  row-gap: 3.75rem;
+  min-height: 21.25rem;
+}
+@media (max-width: 66.25rem) {
+  .contact__inner {
+    justify-content: center;
+    text-align: center;
+  }
+}
+@media (max-width: 30rem) {
+  .contact__inner {
+    row-gap: 1.875rem;
+  }
+}
+.contact__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  row-gap: clamp(2.5rem, 2.2836538462rem + 0.9615384615vw, 3.4375rem);
+}
+.contact__content-info {
+  display: flex;
+  justify-content: start;
+  align-items: stretch;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  row-gap: clamp(1.875rem, 1.8028846154rem + 0.3205128205vw, 2.1875rem);
+  color: var(--color-white);
+}
+.contact__desc {
+  font-size: clamp(0.875rem, 0.8173076923rem + 0.2564102564vw, 1.125rem);
+}
+.contact__form-wrapper {
+  width: 37.375rem;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow);
+}
+.contact__form {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 100%;
+  padding: 1.875rem 2.5rem;
+  row-gap: 1.875rem;
+}
+@media (max-width: 30rem) {
+  .contact__form {
+    padding: 1.5rem 1rem;
+    row-gap: 1.25rem;
+  }
+}
+.contact__form-inputs {
+  display: flex;
+  justify-content: start;
+  align-items: stretch;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.contact__form-input {
+  font-size: clamp(0.875rem, 0.8461538462rem + 0.1282051282vw, 1rem);
+  padding-block: clamp(0.9375rem, 0.8076923077rem + 0.5769230769vw, 1.5rem);
+  border: none;
+  border-bottom: 0.0625rem solid var(--color-light-alt4);
+}
+@media (max-width: 30rem) {
+  .contact__form-button {
+    width: 100%;
+  }
+}
+
+.socials {
+  display: flex;
+  justify-content: start;
+  align-items: stretch;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  row-gap: clamp(1.25rem, 1.1057692308rem + 0.641025641vw, 1.875rem);
+  color: var(--color-white);
+}
+.socials__text {
+  font-size: clamp(1rem, 0.9423076923rem + 0.2564102564vw, 1.25rem);
+  font-weight: 600;
+}
+.socials__list {
+  display: flex;
+  justify-content: start;
+  align-items: stretch;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  column-gap: clamp(2.5rem, 2.2836538462rem + 0.9615384615vw, 3.4375rem);
+}
+@media (max-width: 48rem) {
+  .socials__list {
+    justify-content: center;
+  }
+}
+.socials__link {
+  font-size: clamp(1rem, 0.9423076923rem + 0.2564102564vw, 1.25rem);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  column-gap: 0.9375rem;
+}
+@media (hover: hover) {
+  .socials__link:hover {
+    opacity: 0.8;
+  }
+}
+@media (hover: none) {
+  .socials__link:active {
+    opacity: 0.8;
+  }
+}
+@media (max-width: 48rem) {
+  .socials__link {
+    flex-direction: column;
+    row-gap: 1.25rem;
+  }
+}
+.socials__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 3.3125rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-2);
+}
+@media (max-width: 30rem) {
+  .socials__logo {
+    width: 2.8125rem;
+  }
+}
+.socials__logo svg {
+  width: 66%;
+  height: auto;
 }
 
 /*# sourceMappingURL=main.css.map */
