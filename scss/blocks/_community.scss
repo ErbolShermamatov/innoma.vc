@@ -1,0 +1,34 @@
+@use '../tools' as *;
+.community {
+    position: relative;
+    background: url('../../assets/images/community-bg.jpg') center/cover no-repeat;
+    z-index: 1;
+
+    &__inner {
+        @include flex(flex, center, center, column);
+        height: rem(563);
+    }
+    &__content {
+        @include flex(flex, center, center, column);
+        max-width: fluid(1018, 317);
+        row-gap: rem(25);
+        text-align: center;
+        color: var(--color-white);
+
+        @include tablet {
+            row-gap: rem(30);
+        }
+    }
+    &__title {
+        @include fluid-text(40, 24);
+        font-weight: 700;
+    }
+    &__desc {
+        @include fluid-text(20, 14);
+        max-width: 75%;
+        
+        @include tablet {
+            max-width: 100%;
+        }
+    }
+}

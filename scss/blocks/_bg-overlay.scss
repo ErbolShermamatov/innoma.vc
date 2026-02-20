@@ -6,4 +6,12 @@
     position: absolute;
     inset: 0;
     z-index: -1;
+
+    &--chance {
+        opacity: .55;
+    }
+
+    &--community {
+        opacity: .65;
+    }
 }
