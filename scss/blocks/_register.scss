@@ -1,0 +1,107 @@
+@use "../tools" as *;
+
+.register {
+    &[open] {
+        @include flex(flex, start, center, column);
+        padding: rem(30);
+        width: fluid(884, 320);
+        background-color: var(--color-white);
+        border: none;
+        border-radius: var(--border-radius-large);
+    }
+    &::backdrop {
+        background-color: var(--color-black);
+        opacity: 0.59;
+    }
+
+    &__close-form {
+        align-self: end;
+    }
+
+    &-close-btn {
+        position: relative;
+        width: fluid(46, 30);
+        aspect-ratio: 1;
+        background-color: var(--color-green);
+        border-radius: var(--border-radius-medium);
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: 50%;
+            height: rem(2);
+            border-radius: var(--border-radius-small);
+            background-color: var(--color-white);
+            translate: -50% -50%;
+        }
+
+        &::before {
+            top: 45%;
+        }
+        &::after {
+            top: 60%;
+        }
+        &.is-active {
+            &::before {
+                animation: menu-button 0.3s ease-in forwards;
+            }
+            &::after {
+                animation: menu-button2 0.3s ease-in forwards;
+            }
+        }
+
+        @include animation;
+    }
+    &__content {
+        align-self: stretch;
+        @include flex(flex, start, center, column);
+        text-align: center;
+    }
+    &__title {
+        margin-bottom: fluid(30, 20);
+        font-weight: 600;
+        @include fluid-text(32, 16);
+    }
+    &__form {
+        width: 82%;
+        @include flex(flex, start, center, column);
+        row-gap: fluid(16, 10);
+        margin-bottom: rem(20);
+
+        @include mobile {
+            width: 90%;
+        }
+
+        &-input {
+            @include fluid-text(16, 14);
+            padding: fluid(24, 14);
+            width: 100%;
+            border: none;
+            border-radius: var(--border-radius-large);
+            background-color: var(--color-gray-alt3);
+
+            &::placeholder {
+                color: var(--color-gray-alt4);
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        &-button {
+            width: fluid(326, 200);
+            height: fluid(70, 55);
+            @include mobile {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.signin__button {
+    @include fluid-text(16, 14);
+    color: var(--color-green);
+    border-bottom: rem(1) solid var(--color-green);
+}

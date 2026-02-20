@@ -3,10 +3,13 @@
 @use 'variables';
 @use 'core';
 
+@use 'blocks/top-button';
 @use 'blocks/button';
 @use 'blocks/section';
 
 @use 'blocks/burger-button';
+@use 'blocks/register';
+@use 'blocks/signin';
 @use 'blocks/menu';
 @use 'blocks/header';
 
@@ -48,3 +51,5 @@
 
 @use 'blocks/contact';
 @use 'blocks/socials';
+
+@use 'blocks/footer';

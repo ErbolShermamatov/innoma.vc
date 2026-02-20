@@ -1,0 +1,29 @@
+@use '../tools' as *;
+.top-button {
+    @include flex(flex, center, center);
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    border-radius: 50%;
+    width: fluid(60, 40);
+    aspect-ratio: 1;
+    background-color: var(--color-green);
+    z-index: 5;
+    color: var(--color-white);
+    opacity: 0;
+    visibility: hidden;
+
+    svg {
+        width: 50%;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+    }
+
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+}

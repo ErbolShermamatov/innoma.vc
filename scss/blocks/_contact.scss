@@ -55,6 +55,10 @@
             padding-block: fluid(24, 15);
             border: none;
             border-bottom: rem(1) solid var(--color-light-alt4);
+            
+            &:focus {
+                outline: none;
+            }
         }
         &-button {
             @include mobile {

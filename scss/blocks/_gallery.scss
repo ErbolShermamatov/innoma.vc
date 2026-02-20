@@ -5,11 +5,11 @@
         @include flex(flex, center, start, row-reverse);
         width: fit-content;
         height: fit-content;
+        background-color: var(--color-white);
         border: none;
         column-gap: rem(20);
         padding: fluid(40, 15);
         border-radius: var(--border-radius-large);
-        
 
         @include tablet {
             flex-direction: column;
@@ -18,7 +18,7 @@
 
     &::backdrop {
         background-color: var(--color-black);
-        opacity: 0.5;
+        opacity: 0.59;
     }
     &__form {
         height: auto;

@@ -1,0 +1,45 @@
+@use '../tools' as *;
+.footer {
+    position: relative;
+    z-index: 1;
+    background: url('../../assets/images/hero-bg.jpg') center/cover no-repeat;
+    padding-block: fluid(50, 25);
+    color: var(--color-white);
+
+    &__inner {
+        @include flex(flex, space-between, center);
+        column-gap: rem(25);
+    }
+
+    &__logo {
+        @include flex(flex, start, stretch, column);
+        row-gap: fluid(20, 10);
+        flex-shrink: 0;
+
+        &-img {
+            width: fluid(151, 120);
+        }
+        &-rights {
+            @include fluid-text(14, 12);
+            color: var(--color-white);
+            font-weight: 300;
+        }
+    }
+
+    &__nav {
+        &-list {
+            @include fluid-text(18, 14);
+            @include flex(flex, start, start);
+            column-gap: fluid(52, 20);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+    }
+
+    &__address-info {
+        @include flex(flex, start, stretch, column);
+        row-gap: fluid(7, 0);
+        @include fluid-text(14, 12);
+        max-width: rem(212);
+    }
+}
