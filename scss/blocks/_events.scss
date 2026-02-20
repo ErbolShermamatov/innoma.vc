@@ -1,0 +1,40 @@
+@use '../tools' as *;
+.events {
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(rem(229), 1fr));
+        gap: fluid(20, 10);
+        justify-content: center;
+    }
+
+    &__item {
+        min-height: fluid(392, 171);
+        box-shadow: var(--shadow);
+        border-radius: var(--border-radius-large);
+        
+        &-article {
+            @include flex(flex, start, stretch, column);
+            gap: rem(20);
+        }
+        &-title {
+            @include fluid-text(20, 14);
+            margin-bottom: fluid(10, 5);
+            font-weight: 600;
+        }
+        &-image {
+            width: 100%;
+        }
+        &-desc {
+            @include fluid-text(16, 12);
+        }
+        &-content {
+            @include flex(flex, start, stretch, column);
+            row-gap: fluid(35, 12);
+            padding: 0 fluid(30, 20) fluid(30, 20);
+        }
+        &-date {
+            @include fluid-text(14, 12);
+            font-weight: 300;
+        }
+    }
+}
